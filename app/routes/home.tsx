@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Ridwan Resumind" },
+    { title: "Resumind By Ridwan" },
     {
       name: "description",
       content: "Smart Resume analyzer for your dream job!",
@@ -25,7 +25,7 @@ export default function Home() {
       navigate("/auth?next=/");
     }
   }, [auth.isAuthenticated]);
-  
+
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
       <Navbar />

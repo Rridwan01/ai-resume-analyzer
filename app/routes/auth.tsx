@@ -15,9 +15,11 @@ export default function Auth() {
 
   useEffect(() => {
     if (auth.isAuthenticated) {
-      navigate("/auth?next=/");
+      const searchParams = new URLSearchParams(location.search);
+      const next = searchParams.get("next") || "/";
+      navigate(next, { replace: true });
     }
-  }, [auth.isAuthenticated]);
+  }, [auth.isAuthenticated, location.search, navigate]);
 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover flex items-center justify-center min-h-screen">
